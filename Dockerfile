@@ -8,7 +8,7 @@ RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/
 	&& apk add --update curl openssl ca-certificates bash git zip docker openssh-client \
 	&& apk add --no-cache --virtual build-dependencies linux-headers build-base python3-dev libffi-dev openssl-dev py-psutil \
 	&& pip3 install --no-cache-dir --upgrade pip setuptools \
-	&& pip3 install --upgrade ansible-lint==3.4.19 PyYAML==3.12 Jinja2==2.9.6 boto ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} yamllint==${YAMLLINT_VERSION} docker awscli \
+	&& pip3 install --upgrade ansible-lint==3.4.19 PyYAML==3.12 Jinja2==2.9.6 boto boto3 ansible==${ANSIBLE_VERSION} molecule==${MOLECULE_VERSION} yamllint==${YAMLLINT_VERSION} docker awscli \
 	&& apk del build-dependencies \
     && rm -rf /var/cache/apk/* \
     && rm -r /root/.cache \
